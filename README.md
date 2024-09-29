@@ -5,8 +5,17 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0026-remove-duplicates-from-sorted-array) |
+| [1552-build-an-array-with-stack-operations](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1552-build-an-array-with-stack-operations) |
 ## Two Pointers
 |  |
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0026-remove-duplicates-from-sorted-array) |
+## Stack
+|  |
+| ------- |
+| [1552-build-an-array-with-stack-operations](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1552-build-an-array-with-stack-operations) |
+## Simulation
+|  |
+| ------- |
+| [1552-build-an-array-with-stack-operations](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1552-build-an-array-with-stack-operations) |
 <!---LeetCode Topics End-->
