@@ -18,4 +18,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [1552-build-an-array-with-stack-operations](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1552-build-an-array-with-stack-operations) |
+## Tree
+|  |
+| ------- |
+| [0110-balanced-binary-tree](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0110-balanced-binary-tree) |
+## Depth-First Search
+|  |
+| ------- |
+| [0110-balanced-binary-tree](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0110-balanced-binary-tree) |
+## Binary Tree
+|  |
+| ------- |
+| [0110-balanced-binary-tree](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0110-balanced-binary-tree) |
 <!---LeetCode Topics End-->
