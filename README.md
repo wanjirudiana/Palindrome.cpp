@@ -71,4 +71,5 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
+| [1916-find-center-of-star-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1916-find-center-of-star-graph) |
 <!---LeetCode Topics End-->
