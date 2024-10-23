@@ -49,4 +49,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0124-binary-tree-maximum-path-sum](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0124-binary-tree-maximum-path-sum) |
+## Math
+|  |
+| ------- |
+| [0007-reverse-integer](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0007-reverse-integer) |
 <!---LeetCode Topics End-->
