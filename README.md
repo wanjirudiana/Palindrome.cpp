@@ -36,6 +36,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0094-binary-tree-inorder-traversal](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0094-binary-tree-inorder-traversal) |
 | [0110-balanced-binary-tree](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0110-balanced-binary-tree) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0124-binary-tree-maximum-path-sum) |
+| [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
 | [0144-binary-tree-preorder-traversal](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0145-binary-tree-postorder-traversal) |
 ## Binary Tree
@@ -58,4 +59,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0082-remove-duplicates-from-sorted-list-ii](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0082-remove-duplicates-from-sorted-list-ii) |
+## Hash Table
+|  |
+| ------- |
+| [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
+## Graph
+|  |
+| ------- |
+| [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
 <!---LeetCode Topics End-->
