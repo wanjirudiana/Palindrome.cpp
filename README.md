@@ -39,6 +39,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
 | [0144-binary-tree-preorder-traversal](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0144-binary-tree-preorder-traversal) |
 | [0145-binary-tree-postorder-traversal](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0145-binary-tree-postorder-traversal) |
+| [2439-longest-cycle-in-a-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/2439-longest-cycle-in-a-graph) |
 ## Binary Tree
 |  |
 | ------- |
@@ -72,4 +73,9 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0133-clone-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/0133-clone-graph) |
 | [1916-find-center-of-star-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/1916-find-center-of-star-graph) |
+| [2439-longest-cycle-in-a-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/2439-longest-cycle-in-a-graph) |
+## Topological Sort
+|  |
+| ------- |
+| [2439-longest-cycle-in-a-graph](https://github.com/wanjirudiana/Palindrome.cpp/tree/master/2439-longest-cycle-in-a-graph) |
 <!---LeetCode Topics End-->
