@@ -21,30 +21,27 @@ public:
 
 class Solution {
 public:
-void find(Node*&node,Node*&clonenode,unordered_map<Node*,Node*>&mp)
-{
-    for(Node*x:node->neighbors)
-      {
-          if(mp.find(x)==mp.end())
-           {
-               Node *clone=new Node(x->val);
-               mp[x]=clone;
-               clonenode->neighbors.push_back(clone);
-               find(x,clone,mp);
+    // Map to store the already cloned nodes
+    unordered_map<Node*, Node*> clonedNodes;
 
-           }
-           else
-               clonenode->neighbors.push_back(mp[x]);
-                }
-}
     Node* cloneGraph(Node* node) {
-        if(node==NULL)
-          return node;
-    unordered_map<Node*,Node*>mp;
-     Node*clonenode=new Node(node->val);
-     mp[node]=clonenode;
-     find(node,clonenode,mp);
-     return  clonenode;
+        if (node == nullptr)
+            return nullptr;
 
+        // If the node has already been cloned, return it
+        if (clonedNodes.find(node) != clonedNodes.end()) {
+            return clonedNodes[node];
+        }
+
+        // Clone the node (without neighbors initially)
+        Node* clonedNode = new Node(node->val);
+        clonedNodes[node] = clonedNode;
+
+        // Clone the neighbors recursively
+        for (Node* neighbor : node->neighbors) {
+            clonedNode->neighbors.push_back(cloneGraph(neighbor));
+        }
+
+        return clonedNode;
     }
 };
