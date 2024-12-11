@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Tree with Visualization and Traversals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            text-align: center;
+        }
+        label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            width: 100px;
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 16px;
+            background: #f7f7f7;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        canvas {
+            margin-top: 20px;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Binary Tree Visualization with Traversals</h1>
+        <div>
+            <label for="value">Enter a value to insert:</label>
+            <input type="number" id="value" />
+            <button onclick="insertValue()">Insert</button>
+        </div>
+        <div>
+            <label for="deleteValue">Enter a value to delete:</label>
+            <input type="number" id="deleteValue" />
+            <button onclick="deleteValue()">Delete</button>
+        </div>
+        <div>
+            <button onclick="traverseInOrder()">In-Order Traversal</button>
+            <button onclick="traversePreOrder()">Pre-Order Traversal</button>
+            <button onclick="traversePostOrder()">Post-Order Traversal</button>
+        </div>
+        <canvas id="treeCanvas" width="800" height="400"></canvas>
+        <div class="output" id="output">
+            <h3>Traversals Output:</h3>
+            <pre id="inOrderOutput"></pre>
+            <pre id="preOrderOutput"></pre>
+            <pre id="postOrderOutput"></pre>
+        </div>
+    </div>
+
+    <script>
+        // Binary Tree Node
+        class Node {
+            constructor(data) {
+                this.data = data;
+                this.left = null;
+                this.right = null;
+            }
+        }
+
+        let root = null;
+
+        // Insert a node into the binary search tree
+        function insert(root, data) {
+            if (root === null) {
+                return new Node(data);
+            }
+            if (data < root.data) {
+                root.left = insert(root.left, data);
+            } else if (data > root.data) {
+                root.right = insert(root.right, data);
+            }
+            return root;
+        }
+
+        function insertValue() {
+            const value = document.getElementById('value').value;
+            if (value === "") return alert("Please enter a value.");
+            root = insert(root, parseInt(value));
+            document.getElementById('value').value = "";
+            drawTree();
+        }
+
+        // Delete a node from the binary search tree
+        function deleteNode(root, key) {
+            if (root === null) return root;
+            if (key < root.data) {
+                root.left = deleteNode(root.left, key);
+            } else if (key > root.data) {
+                root.right = deleteNode(root.right, key);
+            } else {
+                if (root.left === null) return root.right;
+                if (root.right === null) return root.left;
+
+                let minNode = findMin(root.right);
+                root.data = minNode.data;
+                root.right = deleteNode(root.right, minNode.data);
+            }
+            return root;
+        }
+
+        function deleteValue() {
+            const value = document.getElementById('deleteValue').value;
+            if (value === "") return alert("Please enter a value.");
+            root = deleteNode(root, parseInt(value));
+            document.getElementById('deleteValue').value = "";
+            drawTree();
+        }
+
+        function findMin(root) {
+            while (root.left !== null) root = root.left;
+            return root;
+        }
+
+        // Traversals
+        function inOrder(root) {
+            let result = [];
+            if (root !== null) {
+                result = result.concat(inOrder(root.left));
+                result.push(root.data);
+                result = result.concat(inOrder(root.right));
+            }
+            return result;
+        }
+
+        function preOrder(root) {
+            let result = [];
+            if (root !== null) {
+                result.push(root.data);
+                result = result.concat(preOrder(root.left));
+                result = result.concat(preOrder(root.right));
+            }
+            return result;
+        }
+
+        function postOrder(root) {
+            let result = [];
+            if (root !== null) {
+                result = result.concat(postOrder(root.left));
+                result = result.concat(postOrder(root.right));
+                result.push(root.data);
+            }
+            return result;
+        }
+
+        // Display traversal results
+        function traverseInOrder() {
+            const result = inOrder(root);
+            document.getElementById('inOrderOutput').textContent = "In-Order: " + result.join(" ");
+        }
+
+        function traversePreOrder() {
+            const result = preOrder(root);
+            document.getElementById('preOrderOutput').textContent = "Pre-Order: " + result.join(" ");
+        }
+
+        function traversePostOrder() {
+            const result = postOrder(root);
+            document.getElementById('postOrderOutput').textContent = "Post-Order: " + result.join(" ");
+        }
+
+        // Draw the binary tree
+        function drawTree() {
+            const canvas = document.getElementById("treeCanvas");
+            const ctx = canvas.getContext("2d");
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (root === null) {
+                ctx.font = "20px Arial";
+                ctx.fillText("Tree is empty", canvas.width / 2 - 50, canvas.height / 2);
+                return;
+            }
+
+            function drawNode(node, x, y, xOffset) {
+                if (!node) return;
+
+                // Draw the node
+                ctx.beginPath();
+                ctx.arc(x, y, 20, 0, 2 * Math.PI);
+                ctx.fillStyle = "#5cb85c";
+                ctx.fill();
+                ctx.strokeStyle = "#333";
+                ctx.stroke();
+                ctx.fillStyle = "#fff";
+                ctx.font = "16px Arial";
+                ctx.textAlign = "center";
+                ctx.fillText(node.data, x, y + 6);
+
+                // Draw left child
+                if (node.left) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y + 20);
+                    ctx.lineTo(x - xOffset, y + 60);
+                    ctx.stroke();
+                    drawNode(node.left, x - xOffset, y + 80, xOffset / 2);
+                }
+
+                // Draw right child
+                if (node.right) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, y + 20);
+                    ctx.lineTo(x + xOffset, y + 60);
+                    ctx.stroke();
+                    drawNode(node.right, x + xOffset, y + 80, xOffset / 2);
+                }
+            }
+
+            drawNode(root, canvas.width / 2, 40, canvas.width / 4);
+        }
+    </script>
+</body>
+</html>
